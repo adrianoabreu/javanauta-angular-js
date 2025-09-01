@@ -227,17 +227,36 @@
       </svg>
       <h1>{{ saudacao }}{{separador}}{{espacamento}}{{userName}}</h1>
       <p>Seja bem vindo {{userName}}</p>
-      <p *ngIf="isLoggedIn">Você está Logado</p>
-      <p *ngIf="!isLoggedIn">Você não está Logado</p>
+      @if (isLoggedIn){
+        <p>Você está Logado</p>
+      }@else {
+        <p>Você não está Logado</p>        
+      }
+<!--  <p *ngIf="isLoggedIn">Você está Logado</p>
+      <p *ngIf="!isLoggedIn">Você não está Logado</p> -->
       <ul>
-        <li *ngFor="let tech of techList">{{tech}}</li>
+        @for (tech of techList; track tech) {
+          <li>{{tech}}</li>
+        }
+<!--    <li *ngFor="let tech of techList">{{tech}}</li>-->
       </ul>
       <button [disabled]="isButtonDisabled" (click)="onButtonClick()">Teste</button>
-      <div [ngSwitch]="userRole">
+    @switch (userRole){
+      @case ('admin') {
+        <p>Você é um usuário administrador do sistema</p>        
+      }
+      @case ('user') {
+        <p>Você é um usuário padrão do sistema</p>
+      }
+      @default {
+        <p>Perfil não identificado</p>
+      }
+    }
+<!--<div [ngSwitch]="userRole">
         <p *ngSwitchCase="'user'">Você é um usuário padrão do sistema</p>
         <p *ngSwitchCase="'admin'">Você é um usuário administrador do sistema</p>
         <p *ngSwitchDefault>Perfil não identificado</p>
-    </div>
+    </div> -->
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

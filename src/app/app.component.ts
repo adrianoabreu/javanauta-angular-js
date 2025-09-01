@@ -1,10 +1,9 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',                //Nome da tag do componente
-  imports: [RouterOutlet, CommonModule],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html', //HTML associado
   styleUrl: './app.component.css'      //CSS associado
 })
@@ -24,8 +23,8 @@ export class AppComponent {
     this.isButtonDisabled = !this.isButtonDisabled //true
   }
 
-  isLoggedIn = false
+  isLoggedIn = true
   techList = ['JQuery', 'Angular', 'React', 'Vue']
-  userRole = 'admin'
+  userRole = 'user'
 
 }
