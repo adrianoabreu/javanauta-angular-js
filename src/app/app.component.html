@@ -277,6 +277,28 @@
       <p>Carregado com sucesso!</p>
     </ng-container>
 
+    <h1>Tarefas</h1>
+    <ul>
+      @for (task of tasks; track task) {
+      <li [ngClass]="{
+          'completada': task.completed,
+          'pendente': !task.completed
+      }">
+      {{task.name}}  
+      </li>
+      }
+    </ul>
+
+    @for (task of taskProgress; track task) {
+    <div>
+      <p [ngStyle]="
+      {
+        'color': task.progress === 100 ? 'green': (task.progress > 50) ? 'orange' : 'red',
+        'font-weight': task.progress === 100 ? 'bold' : 'normal'
+      }
+      ">{{task.name}} - {{task.progress}}%</p>
+    </div>
+    }
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

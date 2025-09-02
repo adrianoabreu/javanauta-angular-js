@@ -29,4 +29,15 @@ export class AppComponent {
   userRole = 'user'
   isLoadded = true
 
+  tasks = [
+    {name: 'Estudar Angular', completed: true},
+    {name: 'Praticar ngClass', completed: false}
+  ]
+
+  taskProgress = [
+    {name: 'Estudo de Angular', progress: 100},
+    {name: 'Estudo do ngStyle', progress: 90},
+    {name: 'Estudo do Operador Ternário', progress: 100}
+  ]
+
 }

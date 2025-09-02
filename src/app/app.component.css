@@ -1,0 +1,8 @@
+.completada {
+    color: yellow;
+    text-decoration: line-through;
+}
+
+.pendente {
+    color: orange;
+}
