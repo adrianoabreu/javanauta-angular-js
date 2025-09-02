@@ -257,6 +257,26 @@
         <p *ngSwitchCase="'admin'">Você é um usuário administrador do sistema</p>
         <p *ngSwitchDefault>Perfil não identificado</p>
     </div> -->
+    <ng-template #carregando>
+      <p>Carregando dados...</p>
+    </ng-template>
+    <div *ngIf="isLoadded, else carregando">
+      <p>Dados carregados!</p>
+    </div>
+
+    <ng-template #erroTemplate>
+      <p>Algo deu errado</p>
+    </ng-template>
+    <ng-container *ngTemplateOutlet="erroTemplate"></ng-container>
+
+    <ng-template #carregado>
+      <p>Dados Carregados com Sucesso!</p>
+    </ng-template>
+
+    <ng-container *ngIf="carregado">
+      <p>Carregado com sucesso!</p>
+    </ng-container>
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

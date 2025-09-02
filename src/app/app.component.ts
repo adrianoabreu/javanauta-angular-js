@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',                //Nome da tag do componente
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html', //HTML associado
   styleUrl: './app.component.css'      //CSS associado
 })
@@ -26,5 +27,6 @@ export class AppComponent {
   isLoggedIn = true
   techList = ['JQuery', 'Angular', 'React', 'Vue']
   userRole = 'user'
+  isLoadded = true
 
 }
